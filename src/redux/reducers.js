@@ -1,6 +1,6 @@
-import { ADD_TASK, DELETE_TASK, TOGGLE_TASK } from './actions'; // Added TOGGLE_TASK
+import { ADD_TASK, DELETE_TASK, TOGGLE_TASK } from './actions'; 
 
-// Load tasks from local storage
+
 const initialState = {
   tasks: JSON.parse(localStorage.getItem('tasks')) || [],
 };
@@ -9,23 +9,23 @@ const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
       const updatedTasksAdd = [...state.tasks, { ...action.payload, completed: false }];
-      localStorage.setItem('tasks', JSON.stringify(updatedTasksAdd)); // Save tasks to local storage
+      localStorage.setItem('tasks', JSON.stringify(updatedTasksAdd)); 
       return {
         ...state,
         tasks: updatedTasksAdd,
       };
     case DELETE_TASK:
       const updatedTasksDelete = state.tasks.filter(task => task.id !== action.payload);
-      localStorage.setItem('tasks', JSON.stringify(updatedTasksDelete)); // Save tasks to local storage
+      localStorage.setItem('tasks', JSON.stringify(updatedTasksDelete)); 
       return {
         ...state,
         tasks: updatedTasksDelete,
       };
-    case TOGGLE_TASK: // Toggle task completion
+    case TOGGLE_TASK: 
       const updatedTasksToggle = state.tasks.map(task =>
         task.id === action.payload ? { ...task, completed: !task.completed } : task
       );
-      localStorage.setItem('tasks', JSON.stringify(updatedTasksToggle)); // Save tasks to local storage
+      localStorage.setItem('tasks', JSON.stringify(updatedTasksToggle)); 
       return {
         ...state,
         tasks: updatedTasksToggle,

@@ -12,7 +12,7 @@ export const deleteTask = (taskId) => ({
   payload: taskId,
 });
 
-export const toggleTask = (taskId) => ({ // New action creator
+export const toggleTask = (taskId) => ({ 
   type: TOGGLE_TASK,
   payload: taskId,
 });
