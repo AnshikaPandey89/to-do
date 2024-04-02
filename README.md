@@ -13,7 +13,7 @@ This is a simple To-Do application built with ReactJS. It allows users to add, v
 Follow these steps to set up and run the application locally:
 
 1. Clone the repository to your local machine:
-git clone https://github.com/your-username/react-todo-app.git
+git clone https://github.com/AnshikaPandey89/to-do.git
 
 2. Navigate to the project directory:
 cd react-todo-app
